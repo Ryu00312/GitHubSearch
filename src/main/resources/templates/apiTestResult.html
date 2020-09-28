@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<link href="/css/style.css" th:href="@{/css/style.css}" rel="stylesheet"
+    type="text/css"></link>
+<title>テスト</title>
+</head>
+<body>
+    <a th:href="@{'/apitest'}">戻る</a>
+    <div class="gitContents">
+        <div class="card card-skin" th:each="item, stat : ${resultApi.items}">
+            <div class="card__imgframe">
+                <img th:src="${item.owner.avatarUrl}">
+            </div>
+            <div class="card__textbox">
+                <div class="card__titletext">
+                    <a th:href="${item.htmlUrl}"><span th:text="${item.name}"></span></a>
+                </div>
+                <div class="card__overviewtext">
+                    <ul>
+                        <li>USER : <span th:text="${item.owner.login}"></span></li>
+                        <li>DESCRIPTION : <span th:text="${item.description}"></span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

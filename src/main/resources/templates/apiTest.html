@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<link href="/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" type="text/css"></link>
+<title>テスト</title>
+</head>
+<body>
+    <form th:action="@{'/apitest'}" method="post">
+        <input type="text" name="target">
+        <button>検索</button>
+        <p>
+            <label><input type="radio" name="language" value="java" checked>java</label>
+            <label><input type="radio" name="language" value="ruby">ruby</label>
+            <label><input type="radio" name="language" value="c#">c#</label>
+            <label><input type="radio" name="language" value="python">python</label>
+            <label><input type="radio" name="language" value="javascript">javascript</label>
+            <label><input type="radio" name="language" value="c"> c</label>
+        </p>
+    </form>
+</body>
+</html>
